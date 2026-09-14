@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社エイム｜土木建築・ホテル運営・介護福祉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-deep:#F3F2EE;
+    --ink:#23262A;
+    --ink-soft:#63655F;
+    --line:#E4E1D9;
+
+    --steel:#3E5A67;
+    --steel-text:#33505C;
+    --gold:#A17131;
+    --gold-text:#835B24;
+    --sage:#647A55;
+    --sage-text:#526445;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    font-size:16px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Noto Serif JP", serif;
+    color:var(--ink);
+    margin:0;
+    line-height:1.55;
+    font-weight:600;
+  }
+  p{ margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:1080px; margin:0 auto;
+  }
+  .logo-mark{
+    display:flex; align-items:center; gap:12px;
+  }
+  .logo-box{
+    width:44px; height:44px;
+    border:1px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Noto Serif JP",serif;
+    font-size:12px; color:var(--ink-soft);
+    text-align:center; line-height:1.3;
+    flex-shrink:0;
+  }
+  .logo-text{
+    font-family:"Noto Serif JP",serif;
+    font-size:18px; font-weight:700; letter-spacing:.04em;
+  }
+  .logo-text span{
+    display:block; font-family:"Noto Sans JP",sans-serif;
+    font-size:10.5px; font-weight:500; color:var(--ink-soft);
+    letter-spacing:.12em; margin-top:2px;
+  }
+  nav{ display:flex; gap:36px; }
+  nav a{
+    font-size:14px; color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .2s, border-color .2s;
+  }
+  nav a:hover{ color:var(--ink); border-color:var(--ink); }
+  .nav-toggle{ display:none; }
+
+  @media (max-width:760px){
+    nav{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 0 96px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-size:14px; color:var(--ink-soft);
+    margin-bottom:18px;
+    letter-spacing:.02em;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4vw,2.9rem);
+    letter-spacing:.01em;
+  }
+  .hero-sub{
+    margin-top:26px;
+    max-width:46ch;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .hero-meta{
+    margin-top:36px;
+    display:flex; gap:32px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .hero-meta b{
+    color:var(--ink); font-weight:600;
+  }
+  .hero-art{
+    width:100%;
+    aspect-ratio:4/3.3;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{
+    padding:96px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .band-alt{
+    background:var(--paper-deep);
+  }
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.5rem,2.6vw,1.9rem);
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+
+  /* ---------- About ---------- */
+  .about-lead{
+    max-width:680px;
+    font-size:15.5px;
+    color:var(--ink-soft);
+    margin-bottom:64px;
+  }
+  .strengths{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+  .strength{
+    padding:32px 28px 0 0;
+    border-left:1px solid var(--line);
+    padding-left:28px;
+    position:relative;
+  }
+  .strength:first-child{ border-left:none; padding-left:0; }
+  .strength-num{
+    font-family:"Noto Serif JP",serif;
+    font-size:34px;
+    color:var(--line);
+    -webkit-text-stroke:1px var(--ink-soft);
+    color:transparent;
+    margin-bottom:18px;
+    display:block;
+  }
+  .strength h3{
+    font-size:16.5px;
+    margin-bottom:14px;
+  }
+  .strength p{
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:760px){
+    .strengths{ grid-template-columns:1fr; }
+    .strength{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:28px; margin-top:28px; }
+    .strength:first-child{ border-top:none; margin-top:0; padding-top:0; }
+  }
+
+  /* ---------- Service blocks ---------- */
+  .service-block{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+    padding:56px 0;
+  }
+  .service-block + .service-block{
+    border-top:1px solid var(--line);
+  }
+  .service-block.reverse .service-media{ order:2; }
+  .service-block.reverse .service-copy{ order:1; }
+
+  .service-tag{
+    font-size:13px;
+    display:inline-block;
+    padding:4px 0;
+    margin-bottom:18px;
+    color:var(--ink-soft);
+  }
+  .service-tag em{
+    font-style:normal;
+    font-family:"Noto Serif JP",serif;
+    font-size:15px;
+    color:var(--accent-text, var(--ink));
+    margin-right:8px;
+  }
+  .service-copy h3{
+    font-size:22px;
+    margin-bottom:18px;
+  }
+  .service-copy p{
+    color:var(--ink-soft);
+    font-size:14.5px;
+  }
+  .service-block--build{ --accent:var(--steel); --accent-text:var(--steel-text); }
+  .service-block--hotel{ --accent:var(--gold); --accent-text:var(--gold-text); }
+  .service-block--care{ --accent:var(--sage); --accent-text:var(--sage-text); }
+  .service-copy h3::after{
+    content:"";
+    display:block;
+    width:34px; height:2px;
+    background:var(--accent);
+    margin-top:16px;
+  }
+
+  @media (max-width:760px){
+    .service-block{ grid-template-columns:1fr; }
+    .service-block.reverse .service-media{ order:1; }
+    .service-block.reverse .service-copy{ order:2; }
+  }
+
+  /* ---------- Image placeholders ---------- */
+  .imgph{
+    position:relative;
+    width:100%;
+    background:
+      repeating-linear-gradient(45deg, var(--line) 0 1px, transparent 1px 13px),
+      var(--paper-deep);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:flex-end;
+    aspect-ratio:4/3;
+    overflow:hidden;
+  }
+  .imgph-label{
+    width:100%;
+    background:rgba(255,255,255,0.9);
+    border-top:1px solid var(--line);
+    padding:12px 16px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .imgph-label b{
+    display:block;
+    color:var(--ink);
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .imgph.tall{ aspect-ratio:4/5; }
+  .imgph.wide{ aspect-ratio:16/9; }
+
+  /* ---------- Track record ---------- */
+  .record-group{ margin-bottom:72px; }
+  .record-group:last-child{ margin-bottom:0; }
+  .record-group h3{
+    font-size:14px;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .record-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .record-card h4{
+    font-size:17px;
+    margin:20px 0 4px;
+  }
+  .record-card .record-en{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    display:block;
+  }
+  .record-spec{
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .record-spec div{
+    display:flex;
+    gap:10px;
+    padding:7px 0;
+    border-top:1px solid var(--line);
+  }
+  .record-spec div:first-child{ border-top:none; }
+  .record-spec dt{
+    flex:0 0 84px;
+    color:var(--ink-soft);
+  }
+  .record-spec dd{
+    margin:0;
+    color:var(--ink);
+    flex:1;
+  }
+  .record-desc{
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:760px){
+    .record-cards{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Company profile ---------- */
+  .profile-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .profile-table tr{ border-top:1px solid var(--line); }
+  .profile-table tr:first-child{ border-top:none; }
+  .profile-table th{
+    text-align:left;
+    font-weight:500;
+    color:var(--ink-soft);
+    padding:16px 20px 16px 0;
+    width:190px;
+    vertical-align:top;
+  }
+  .profile-table td{
+    padding:16px 0;
+    vertical-align:top;
+  }
+  .profile-table td ol,
+  .profile-table td ul{
+    margin:0; padding-left:1.1em;
+  }
+  .profile-table td li{ margin-bottom:4px; }
+  .profile-table td li:last-child{ margin-bottom:0; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:48px 0;
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .footer-copy{
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .header-row{ padding:16px 20px; }
+    .hero{ padding:56px 0 64px; }
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    section{ padding:64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <div class="logo-mark">
+      <div class="logo-box">LOGO</div>
+      <div class="logo-text">株式会社エイム<span>AIM CO., LTD.</span></div>
+    </div>
+    <nav>
+      <a href="#about">企業理念</a>
+      <a href="#service">事業内容</a>
+      <a href="#record">主要実績</a>
+      <a href="#profile">会社概要</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="border-bottom:1px solid var(--line);">
+   <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-eyebrow">株式会社エイム</p>
+        <h1>確かな技術と温かなサービスで、<br>人・地域・未来をつなぐ。</h1>
+        <p class="hero-sub">
+          確かな施工実績を誇る土木建築・不動産開発、至福のひとときを届けるホテル・リゾートヴィラ運営、
+          地域に寄り添う介護・福祉サービス。創業25年以上の信頼と多角化経営で、持続可能な未来を築きます。
+        </p>
+        <div class="hero-meta">
+          <span><b>1997年</b> 設立</span>
+          <span><b>大阪府寝屋川市</b> 本社</span>
+          <span><b>3事業</b> 土木建築・ホテル運営・介護福祉</span>
+        </div>
+      </div>
+      <div>
+        <!-- 抽象的なライン画。左：建設用クレーン／中央：ホテル建物／右：介護（芽・手）の3つを一本の線でつなぐイメージ -->
+        <svg class="hero-art" viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="420" height="340" fill="none"/>
+          <!-- crane -->
+          <g stroke="#45606D" stroke-width="2" stroke-linecap="round">
+            <line x1="46" y1="300" x2="46" y2="120"/>
+            <line x1="46" y1="120" x2="150" y2="95"/>
+            <line x1="46" y1="130" x2="30" y2="150"/>
+            <line x1="46" y1="130" x2="150" y2="105"/>
+            <line x1="150" y1="95" x2="150" y2="150"/>
+          </g>
+          <!-- building (hotel) -->
+          <g stroke="#A9793C" stroke-width="2">
+            <rect x="185" y="140" width="86" height="160" />
+            <line x1="205" y1="165" x2="205" y2="180"/>
+            <line x1="225" y1="165" x2="225" y2="180"/>
+            <line x1="245" y1="165" x2="245" y2="180"/>
+            <line x1="205" y1="200" x2="205" y2="215"/>
+            <line x1="225" y1="200" x2="225" y2="215"/>
+            <line x1="245" y1="200" x2="245" y2="215"/>
+            <line x1="205" y1="235" x2="205" y2="250"/>
+            <line x1="225" y1="235" x2="225" y2="250"/>
+            <line x1="245" y1="235" x2="245" y2="250"/>
+          </g>
+          <!-- leaf / care -->
+          <g stroke="#71805D" stroke-width="2" stroke-linecap="round">
+            <path d="M310 300 C310 230 350 200 390 190 C382 240 360 285 310 300 Z"/>
+            <line x1="312" y1="298" x2="386" y2="194"/>
+          </g>
+          <!-- connecting ground line -->
+          <line x1="20" y1="300" x2="400" y2="300" stroke="#26282A" stroke-width="1.4"/>
+          <circle cx="46" cy="300" r="3.4" fill="#45606D"/>
+          <circle cx="228" cy="300" r="3.4" fill="#A9793C"/>
+          <circle cx="345" cy="300" r="3.4" fill="#71805D"/>
+        </svg>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="band-alt">
+   <div class="wrap">
+    <div class="section-head">
+      <h2>インフラ構築から、心豊かな暮らしと安心の提供まで</h2>
+    </div>
+    <p class="about-lead">
+      株式会社エイムは、1997年の設立以来、約30年にわたり地域社会の発展に寄与してまいりました。
+      土木建築による都市基盤整備をはじめ、奈良・鳥取における宿泊施設の運営、そして高齢化社会を支える介護福祉事業を展開。
+      特定の事業環境に左右されない強固なポートフォリオを構築し、高品質なサービスを提供し続けています。
+    </p>
+
+    <div class="strengths">
+      <div class="strength">
+        <span class="strength-num">壱</span>
+        <h3>創業25年超の歴史と、高い与信・財務基盤</h3>
+        <p>
+          平成9年（1997年）設立、資本金2,000万円。大阪厚生信用金庫をはじめとする金融機関との強い信頼関係のもと、
+          数億円規模のプロジェクト融資実績を有する確かな財務基盤を確立しています。
+        </p>
+      </div>
+      <div class="strength">
+        <span class="strength-num">弐</span>
+        <h3>大型プロジェクトから自社開発まで手掛ける、高い技術力</h3>
+        <p>
+          総戸数460戸のメガマンション施工参画から、自社企画・開発による10階建て賃貸マンションの施工まで、
+          多様な建設ニーズに対応する施工管理能力を有しています。
+        </p>
+      </div>
+      <div class="strength">
+        <span class="strength-num">参</span>
+        <h3>リスクに強く収益性の高い、多角化ポートフォリオ</h3>
+        <p>
+          「建設・不動産（基盤）」×「ホテル運営（高収益・観光需要）」×「介護福祉（安定需要）」という
+          バランスの取れた事業構成により、安定した成長を維持しています。
+        </p>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ SERVICE ============ -->
+  <section id="service">
+   <div class="wrap">
+    <div class="section-head">
+      <h2>事業内容</h2>
+      <p>土木建築を礎に、ホテル運営、介護福祉へと事業領域を広げてきました。</p>
+    </div>
+
+    <div class="service-block service-block--build">
+      <div class="service-media">
+        <div class="imgph">
+          <div class="imgph-label">
+            <b>画像挿入エリア</b>
+            施工現場・グレイス堺の外観写真など
+          </div>
+        </div>
+      </div>
+      <div class="service-copy">
+        <p class="service-tag"><em>事業 01</em>土木建築・不動産開発事業</p>
+        <h3>豊かな街づくりの基盤をつくる</h3>
+        <p>
+          豊かな街づくりの基盤となる土木・建築工事の施工・請負および設計監理を行っています。
+          安全性の徹底と高い品質管理のもと、中高層マンションや各種構造物の建築・開発を手掛け、資産価値の最大化に貢献します。
+        </p>
+      </div>
+    </div>
+
+    <div class="service-block service-block--hotel reverse">
+      <div class="service-media">
+        <div class="imgph">
+          <div class="imgph-label">
+            <b>画像挿入エリア</b>
+            ホテル ヴィラ 大和高田／鳥取の外観・客室写真
+          </div>
+        </div>
+      </div>
+      <div class="service-copy">
+        <p class="service-tag"><em>事業 02</em>ホテル・リゾートヴィラ運営事業</p>
+        <h3>至福のひとときを届ける</h3>
+        <p>
+          自社での不動産・建築ノウハウを活かし、快適性とプライベート空間を追求したホテル・リゾート施設を運営。
+          地域の特性に合わせた高品質なホスピタリティを提供し、安定した高稼働・高収益モデルを確立しています。
+        </p>
+      </div>
+    </div>
+
+    <div class="service-block service-block--care">
+      <div class="service-media">
+        <div class="imgph">
+          <div class="imgph-label">
+            <b>画像挿入エリア</b>
+            介護施設・スタッフの様子の写真
+          </div>
+        </div>
+      </div>
+      <div class="service-copy">
+        <p class="service-tag"><em>事業 03</em>介護・福祉サービス事業</p>
+        <h3>地域に寄り添い、安心を届ける</h3>
+        <p>
+          奈良県エリアを中心に、地域密着型の各種介護保険サービスや福祉施設運営を展開。
+          専門性の高いスタッフ育成と地域ケアネットワークの連携により、利用者様が安心して暮らせる環境づくりを支えています。
+        </p>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ TRACK RECORD ============ -->
+  <section id="record" class="band-alt">
+   <div class="wrap">
+    <div class="section-head">
+      <h2>主要実績</h2>
+      <p>土木会社としての歩みから、自社開発、そしてホテル運営まで。</p>
+    </div>
+
+    <div class="record-group">
+      <h3>開発・施工実績</h3>
+      <div class="record-cards">
+        <div class="record-card">
+          <div class="imgph">
+            <div class="imgph-label">
+              <b>画像挿入エリア</b>
+              グレイス堺 外観写真
+            </div>
+          </div>
+          <h4>グレイス堺</h4>
+          <span class="record-en">Grace Sakai ／ 自社開発・施工</span>
+          <dl class="record-spec">
+            <div><dt>所在地</dt><dd>大阪府堺市堺区翁橋町1丁目9-17</dd></div>
+            <div><dt>規模</dt><dd>鉄筋コンクリート造 地上10階建て（総戸数 26戸）</dd></div>
+            <div><dt>竣工</dt><dd>2022年1月</dd></div>
+          </dl>
+          <p class="record-desc">
+            デザイン性と高い居住性を追求した都市型賃貸マンション。自社にて企画・開発・施工管理を一貫して実施しました。
+          </p>
+        </div>
+
+        <div class="record-card">
+          <div class="imgph">
+            <div class="imgph-label">
+              <b>画像挿入エリア</b>
+              シャルム堺 外観写真
+            </div>
+          </div>
+          <h4>シャルム堺</h4>
+          <span class="record-en">Charme Sakai ／ 大型プロジェクト参画</span>
+          <dl class="record-spec">
+            <div><dt>所在地</dt><dd>大阪府堺市堺区大浜北町2丁目1-7</dd></div>
+            <div><dt>規模</dt><dd>地上14階建て（総戸数 460戸）</dd></div>
+            <div><dt>建築主</dt><dd>岩谷産業株式会社（施工：株式会社長谷工コーポレーション）</dd></div>
+          </dl>
+          <p class="record-desc">
+            大規模分譲マンションプロジェクトにおける施工・工事協力実績。厳格な施工管理基準を満たす高品質な技術力を発揮しました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="record-group">
+      <h3>運営ホテル実績</h3>
+      <div class="record-cards">
+        <div class="record-card">
+          <div class="imgph">
+            <div class="imgph-label">
+              <b>画像挿入エリア</b>
+              ホテル ヴィラ 大和高田 外観・客室写真
+            </div>
+          </div>
+          <h4>ホテル ヴィラ 大和高田</h4>
+          <span class="record-en">奈良県</span>
+          <dl class="record-spec">
+            <div><dt>所在地</dt><dd>奈良県大和高田市田井466-4</dd></div>
+          </dl>
+          <p class="record-desc">
+            プライベート空間と上質な設備を備えたリゾートヴィラ。リピーター層を中心に高い稼働率を誇ります。
+          </p>
+        </div>
+
+        <div class="record-card">
+          <div class="imgph">
+            <div class="imgph-label">
+              <b>画像挿入エリア</b>
+              ホテル ヴィラ 鳥取 外観・客室写真
+            </div>
+          </div>
+          <h4>ホテル ヴィラ 鳥取</h4>
+          <span class="record-en">鳥取県</span>
+          <dl class="record-spec">
+            <div><dt>所在地</dt><dd>鳥取県鳥取市御弓町39</dd></div>
+          </dl>
+          <p class="record-desc">
+            鳥取駅至近の好立地に位置し、ビジネス・レジャー双方の需要に対応した上質な宿泊空間を提供しています。
+          </p>
+        </div>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ============ COMPANY PROFILE ============ -->
+  <section id="profile">
+   <div class="wrap">
+    <div class="section-head">
+      <h2>会社概要</h2>
+    </div>
+    <table class="profile-table">
+      <tr><th>会社名</th><td>株式会社エイム</td></tr>
+      <tr><th>設立</th><td>平成9年（1997年）7月24日</td></tr>
+      <tr><th>資本金</th><td>2,000万円</td></tr>
+      <tr><th>代表取締役</th><td>濱田 武士</td></tr>
+      <tr><th>最高経営責任者（CEO）</th><td>長江 洋子</td></tr>
+      <tr><th>所在地</th><td>〒572-0837　大阪府寝屋川市錦町15番2号</td></tr>
+      <tr><th>決算期</th><td>6月（年1回）</td></tr>
+      <tr><th>事業拠点</th>
+        <td>
+          <ul>
+            <li>本社（大阪府寝屋川市）</li>
+            <li>ホテル事業拠点（奈良県大和高田市／鳥取県鳥取市）</li>
+            <li>介護福祉事業拠点（奈良県）</li>
+          </ul>
+        </td>
+      </tr>
+      <tr><th>取引金融機関</th><td>大阪厚生信用金庫 ほか（数億円規模の事業・プロジェクト融資実績あり）</td></tr>
+      <tr><th>事業内容</th>
+        <td>
+          <ol>
+            <li>建設業・土木建築工事の施工および請負</li>
+            <li>建築物の設計および工事監理</li>
+            <li>旅館・ホテルの経営（奈良県・鳥取県）</li>
+            <li>介護保険法に基づく各種介護サービス事業（奈良県）</li>
+            <li>不動産賃貸業および管理</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+   </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="footer-row">
+    <div class="logo-mark">
+      <div class="logo-box" style="width:36px;height:36px;font-size:10px;">LOGO</div>
+      <div class="logo-text" style="font-size:15px;">株式会社エイム</div>
+    </div>
+    <p class="footer-copy">&copy; AIM Co., Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
