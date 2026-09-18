@@ -74,6 +74,11 @@
     font-size:12px; color:var(--ink-soft);
     text-align:center; line-height:1.3;
     flex-shrink:0;
+    overflow:hidden;
+  }
+  .logo-box img{
+    width:100%; height:100%; object-fit:contain;
+    display:block;
   }
   .logo-text{
     font-family:"Noto Serif JP",serif;
@@ -271,6 +276,11 @@
     aspect-ratio:4/3;
     overflow:hidden;
   }
+  .imgph-photo{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+  }
   .imgph-label{
     width:100%;
     background:rgba(255,255,255,0.9);
@@ -402,7 +412,7 @@
 <header>
   <div class="header-row">
     <div class="logo-mark">
-      <div class="logo-box">LOGO</div>
+      <div class="logo-box"><img src="logo.png" alt="株式会社エイム" onerror="this.style.display='none';this.parentElement.textContent='LOGO'"></div>
       <div class="logo-text">株式会社エイム<span>AIM CO., LTD.</span></div>
     </div>
     <nav>
@@ -497,9 +507,9 @@
       </div>
       <div class="strength">
         <span class="strength-num">弐</span>
-        <h3>自社開発から施工まで一貫して手掛ける、高い技術力</h3>
+        <h3>大型プロジェクトから自社開発まで手掛ける、高い技術力</h3>
         <p>
-          自社企画・開発による10階建て賃貸マンションの施工をはじめ、中高層マンションの開発・施工まで、
+          総戸数460戸のメガマンション施工参画から、自社企画・開発による10階建て賃貸マンションの施工まで、
           多様な建設ニーズに対応する施工管理能力を有しています。
         </p>
       </div>
@@ -526,6 +536,7 @@
     <div class="service-block service-block--build">
       <div class="service-media">
         <div class="imgph">
+          <img class="imgph-photo" src="service-construction.jpg" alt="土木建築・不動産開発事業" onerror="this.style.display='none'">
           <div class="imgph-label">
             <b>画像挿入エリア</b>
             施工現場・グレイス堺の外観写真など
@@ -545,6 +556,7 @@
     <div class="service-block service-block--hotel reverse">
       <div class="service-media">
         <div class="imgph">
+          <img class="imgph-photo" src="service-hotel.jpg" alt="ホテル・リゾートヴィラ運営事業" onerror="this.style.display='none'">
           <div class="imgph-label">
             <b>画像挿入エリア</b>
             ホテル ヴィラ 大和高田／鳥取の外観・客室写真
@@ -564,6 +576,7 @@
     <div class="service-block service-block--care">
       <div class="service-media">
         <div class="imgph">
+          <img class="imgph-photo" src="service-care.jpg" alt="介護・福祉サービス事業" onerror="this.style.display='none'">
           <div class="imgph-label">
             <b>画像挿入エリア</b>
             介護施設・スタッフの様子の写真
@@ -595,6 +608,7 @@
       <div class="record-cards">
         <div class="record-card">
           <div class="imgph">
+          <img class="imgph-photo" src="grace-sakai.jpg" alt="グレイス堺" onerror="this.style.display='none'">
             <div class="imgph-label">
               <b>画像挿入エリア</b>
               グレイス堺 外観写真
@@ -614,21 +628,21 @@
 
         <div class="record-card">
           <div class="imgph">
+          <img class="imgph-photo" src="charme-sakai.jpg" alt="シャルム堺" onerror="this.style.display='none'">
             <div class="imgph-label">
               <b>画像挿入エリア</b>
-              シャルム・堺 外観写真
+              シャルム堺 外観写真
             </div>
           </div>
-          <h4>シャルム・堺</h4>
-          <span class="record-en">Charme Sakai</span>
+          <h4>シャルム堺</h4>
+          <span class="record-en">Charme Sakai ／ 大型プロジェクト参画</span>
           <dl class="record-spec">
-            <div><dt>所在地</dt><dd>大阪府堺市堺区翁橋町1丁目9-1</dd></div>
-            <div><dt>規模</dt><dd>地上10階建て（総戸数 55戸）</dd></div>
-            <div><dt>建物構造</dt><dd>鉄筋コンクリート造（RC）</dd></div>
-            <div><dt>築年月</dt><dd>2018年2月</dd></div>
+            <div><dt>所在地</dt><dd>大阪府堺市堺区大浜北町2丁目1-7</dd></div>
+            <div><dt>規模</dt><dd>地上14階建て（総戸数 460戸）</dd></div>
+            <div><dt>建築主</dt><dd>岩谷産業株式会社（施工：株式会社長谷工コーポレーション）</dd></div>
           </dl>
           <p class="record-desc">
-            堺市堺区の利便性の高いエリアに位置する10階建ての賃貸マンション。オートロックやエレベーターなどの快適な設備を備え、周辺には商業施設や公共施設が揃う良好な住環境を提供しています。
+            大規模分譲マンションプロジェクトにおける施工・工事協力実績。厳格な施工管理基準を満たす高品質な技術力を発揮しました。
           </p>
         </div>
       </div>
@@ -639,6 +653,7 @@
       <div class="record-cards">
         <div class="record-card">
           <div class="imgph">
+          <img class="imgph-photo" src="hotel-yamatotakada.jpg" alt="ホテル ヴィラ 大和高田" onerror="this.style.display='none'">
             <div class="imgph-label">
               <b>画像挿入エリア</b>
               ホテル ヴィラ 大和高田 外観・客室写真
@@ -656,6 +671,7 @@
 
         <div class="record-card">
           <div class="imgph">
+          <img class="imgph-photo" src="hotel-tottori.jpg" alt="ホテル ヴィラ 鳥取" onerror="this.style.display='none'">
             <div class="imgph-label">
               <b>画像挿入エリア</b>
               ホテル ヴィラ 鳥取 外観・客室写真
@@ -687,7 +703,7 @@
       <tr><th>資本金</th><td>2,000万円</td></tr>
       <tr><th>代表取締役</th><td>濱田 武士</td></tr>
       <tr><th>最高経営責任者（CEO）</th><td>長江 洋子</td></tr>
-      <tr><th>所在地</th><td>〒572-0043　大阪府寝屋川市錦町15番2号 </td></tr>
+      <tr><th>所在地</th><td>〒572-0043　大阪府寝屋川市錦町15番2号</td></tr>
       <tr><th>決算期</th><td>6月（年1回）</td></tr>
       <tr><th>事業拠点</th>
         <td>
@@ -719,7 +735,7 @@
 <footer class="wrap">
   <div class="footer-row">
     <div class="logo-mark">
-      <div class="logo-box" style="width:36px;height:36px;font-size:10px;">LOGO</div>
+      <div class="logo-box" style="width:36px;height:36px;font-size:10px;"><img src="logo.png" alt="株式会社エイム" onerror="this.style.display='none';this.parentElement.textContent='LOGO'"></div>
       <div class="logo-text" style="font-size:15px;">株式会社エイム</div>
     </div>
     <p class="footer-copy">&copy; AIM Co., Ltd. All Rights Reserved.</p>
